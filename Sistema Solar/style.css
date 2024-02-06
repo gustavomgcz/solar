@@ -1,0 +1,238 @@
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes teste {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+body {
+    align-items: center;
+    background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    font-size: 10px;
+    height: 70em;
+    position: relative;
+    width: 90em;
+}
+
+.sol {
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+    position: absolute;
+    height: 10em;
+    left: 40em;
+    top: 30em;
+    width: 10em;
+}
+
+.terra, .lua, .mercurio, .venus, .marte, .jupiter, .saturno, .urano, .netuno {
+    border-color: white transparent transparent transparent;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 0.1em 0.1em 0 0;
+    position: absolute;
+}
+
+.mercurio {
+    animation: orbit 8.8s linear infinite;
+    left: 37.5em;
+    height: 15em;
+    top: 27.5em;
+    width: 15em;
+}
+
+.venus {
+    animation: orbit 24.3s linear infinite;
+    left: 35em;
+    height: 20em;
+    top: 25em;
+    width: 20em;
+}
+
+.terra {
+    animation: orbit 36.5s linear infinite;
+    height: 30em;
+    left: 30em;
+    top: 20em;
+    width: 30em;
+}
+
+.lua {
+    animation: orbit 2.7s linear infinite;
+    height: 5em;
+    left: 23.6em;
+    top: 2.7em;
+    width: 5em;
+}
+
+.marte {
+    animation: orbit 68.7s linear infinite;
+    height: 38em;
+    left: 26em;
+    top: 16em;
+    width: 38em;
+}
+
+.jupiter {
+    animation: orbit 433.2s linear infinite;
+    height: 49em;
+    left: 20.5em;
+    top: 10.5em;
+    width: 49em;
+}
+
+.saturno {
+    /* animation: orbit 1075.9s linear infinite; */
+    animation: orbit 9s linear infinite;
+    height: 65em;
+    left: 12.5em;
+    top: 3em;
+    width: 65em;
+}
+
+.anel {
+    position: absolute;
+    /* animation: teste 1075.9s linear infinite; */
+    animation: teste 9s linear infinite;
+    width: 6em;
+    height: 3.3em;
+    border-color: #85733b;
+    border-style: solid;
+    border-width: 0em 1.2em 1em 1.2em;
+    border-radius: 50%;
+    left: 52.2em;
+    top: 8.5em;
+}
+
+.urano {
+    animation: orbit 3068.5s linear infinite;
+    height: 73em;
+    left: 8.5em;
+    top: -1.5em;
+    width: 73em;
+}
+
+.netuno {
+    animation: orbit 6019s linear infinite;
+    height: 80em;
+    left: 5em;
+    top: -5em;
+    width: 80em;
+}
+
+.mercurio::before,
+.venus::before,
+.terra::before, .lua::before,
+.marte::before,
+.jupiter::before,
+.saturno::before,
+.urano::before,
+.netuno::before {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+}
+
+.mercurio::before {
+    background-color: #d1662e;
+    height: 1em;
+    right: 1.5em;
+    top: 1.7em;
+    width: 1em;
+}
+
+.venus::before {
+    background-color: #cfb666;
+    height: 2.5em;
+    right: 1.5em;
+    top: 2em;
+    width: 2.5em;
+}
+
+.terra::before {
+    background-color: aqua;
+    height: 2.7em;
+    right: 2.5em;
+    top: 4em;
+    width: 2.7em;
+}
+
+.lua::before {
+    background-color: silver;
+    height: 0.7em;
+    right: 0.2em;
+    top: 0.5em;
+    width: 0.7em;
+}
+
+.marte::before {
+    background-color: #d76233;
+    height: 1.4em;
+    right: 4.5em;
+    top: 5.3em;
+    width: 1.4em;
+}
+
+.jupiter::before {
+    background-color: #c8cee9;
+    height: 7em;
+    right: 3em;
+    top: 5em;
+    width: 7em;
+}
+
+.saturno::before {
+    background-color: #edd58e;
+    height: 5em;
+    right: 6em;
+    top: 8.5em;
+    width: 5em;
+}
+
+.urano::before {
+    background-color: #b1e1ff;
+    height: 3.2em;
+    right: 8em;
+    top: 10em;
+    width: 3.2em;
+}
+
+.netuno::before {
+    background-color: #3776c1;
+    height: 3.0em;
+    right: 9.5em;
+    top: 11em;
+    width: 3.0em;
+}
+
+.mercurio::after,
+.venus::after,
+.terra::after, .lua::after,
+.marte::after,
+.jupiter::after,
+.saturno::after,
+.urano::after {
+    position: absolute;
+}
+
+.terra::after {
+    animation: teste 36.5s linear infinite;
+    content: 'Terra';
+    color: white;
+    font-size: 1.5em;
+    right: 1.5em;
+    top: 3em;
+}
